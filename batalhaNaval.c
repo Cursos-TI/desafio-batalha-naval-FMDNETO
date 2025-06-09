@@ -8,7 +8,7 @@ int main(){
     //O TABULEIRO SERÁ FEITO COM 0 E NAVIOS COM 3
     //A MATRIZ TERÁ O TAMANHO 10x10
     int tabuleiro[10][10];
-    int i,j; //VARIAVEIS DAS COORDENADAS DA MATRIZ
+    int i,j; //VARIAVEIS DAS COORDENADAS DA MATRIZ - I PARA COLUNA E J PARA LINHAS
     char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //LINHAS DO TABULEIRO
 
     // EXIBINDO O TABULEIRO VAZIO
@@ -41,6 +41,15 @@ int main(){
         tabuleiro[i][6] = 3; // COLUNA 7 (índice 6), LINHAS 5 A 7 (índices 5 a 7)
     }
 
+    // NAVIO DIAGONAL COMEÇANDO EM B6 (3 posições)
+    for(i=5, j=1; i<8 && j<4; i++, j++){
+        tabuleiro[i][j] = 3; // LINHA 6 A 8 (índices 5 a 7), COLUNA B A D (índices 1 a 3)
+    }
+
+    // NAVIO DIAGONAL SECUNDARIA COMEÇANDO EM I2 (3 posições)
+    for(i=1, j=8; i<4 && j>5; i++, j--){
+        tabuleiro[i][j] = 3; // LINHA 2 A 4 (índices 1 a 3), COLUNA I A G (índices 8 a 6)
+    }
 
     // EXIBINDO O TABULEIRO COM OS NAVIOS POSICIONADOS
     printf("\n      BATALHA NAVAL\n");
